@@ -1,6 +1,6 @@
 $breakpoints: (
 	small: 36em,
-	medium: 48em,
+	medium: 50em,
 	large: 62em,
 );
 
@@ -8,6 +8,10 @@ $colors: (
 	primary: (
 		300: hsl(240 18% 77%),
 		600: hsl(240 38% 20%),
+		625: hsl(240 38% 20% / 0.25),
+	),
+	neutral: (
+		100: hsl(0 0% 100%),
 	),
 );
 

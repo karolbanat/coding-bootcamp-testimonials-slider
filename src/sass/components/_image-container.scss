@@ -1,0 +1,42 @@
+@use '../abstracts/mixins' as mxn;
+
+.image-container {
+	position: relative;
+	padding-inline: 3.6rem;
+	padding-block-start: 3rem;
+	padding-block-end: 2.4rem;
+	max-width: max-content;
+	@include mxn.mq(medium) {
+		padding: 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -10;
+		/* background pattern */
+		background-image: url('../images/pattern-bg.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		@include mxn.mq(medium) {
+			/* set background pattern size bigger than container size */
+			top: -6.4rem;
+			left: -6.4rem;
+			right: -9rem;
+			bottom: -5.6rem;
+		}
+	}
+
+	& img {
+		max-width: 25.5rem;
+		border-radius: var(--borr-200);
+		box-shadow: 0 6rem 2rem -2rem var(--clr-primary-625);
+		@include mxn.mq(medium) {
+			max-width: 45rem;
+		}
+		@include mxn.mq(large) {
+			max-width: 100%;
+		}
+	}
+}

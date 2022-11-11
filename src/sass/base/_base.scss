@@ -16,6 +16,7 @@ main {
 	background-repeat: no-repeat;
 	background-position: bottom left;
 	background-size: contain;
+	overflow: hidden;
 	@include mxn.mq(medium) {
 		background-size: unset;
 	}

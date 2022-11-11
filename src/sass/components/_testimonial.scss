@@ -1,0 +1,62 @@
+@use '../abstracts/mixins' as mxn;
+
+.testimonial {
+	position: relative;
+	isolation: isolate;
+	text-align: center;
+	@include mxn.mq(medium) {
+		text-align: start;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		/* position quote image on the top center */
+		top: -2.6rem;
+		left: 50%;
+		transform: translate(-50%);
+		/* set size */
+		width: 19.5%;
+		max-width: 12.5rem;
+		height: 100%;
+		max-height: 10rem;
+		/* quote image */
+		background-image: url('../images/pattern-quotes.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		@include mxn.mq(medium) {
+			/* move image to the left */
+			top: -6.4rem;
+			left: 9.4rem;
+			transform: translateX(0);
+		}
+	}
+
+	&__quote {
+		font-size: var(--fz-600);
+		font-weight: var(--fw-300);
+	}
+
+	&__author {
+		margin-block-start: 1.6rem;
+		font-size: var(--fz-400);
+		@include mxn.mq(medium) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin-block-start: 4rem;
+		}
+	}
+
+	&__name {
+		font-weight: var(--fw-700);
+		color: var(--clr-primary-600);
+	}
+
+	&__role {
+		font-weight: var(--fw-500);
+		color: var(--clr-primary-300);
+	}
+}
