@@ -6,7 +6,7 @@
 	padding-block-start: 3rem;
 	padding-block-end: 2.4rem;
 	max-width: max-content;
-	@include mxn.mq(medium) {
+	@include mxn.mq(large) {
 		padding: 0;
 	}
 
@@ -19,7 +19,7 @@
 		background-image: url('../images/pattern-bg.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
-		@include mxn.mq(medium) {
+		@include mxn.mq(large) {
 			/* set background pattern size bigger than container size */
 			top: -6.4rem;
 			left: -6.4rem;
@@ -32,6 +32,10 @@
 		max-width: 25.5rem;
 		border-radius: var(--borr-200);
 		box-shadow: 0 6rem 2rem -2rem var(--clr-primary-625);
+		@media only screen and (max-width: 23em) {
+			/* case for screens smaller than ~368px */
+			max-width: 100%;
+		}
 		@include mxn.mq(medium) {
 			max-width: 45rem;
 		}

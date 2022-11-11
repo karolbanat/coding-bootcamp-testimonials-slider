@@ -4,7 +4,7 @@
 	position: relative;
 	isolation: isolate;
 	text-align: center;
-	@include mxn.mq(medium) {
+	@include mxn.mq(large) {
 		text-align: start;
 	}
 
@@ -25,7 +25,7 @@
 		background-image: url('../images/pattern-quotes.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
-		@include mxn.mq(medium) {
+		@include mxn.mq(large) {
 			/* move image to the left */
 			top: -6.4rem;
 			left: 9.4rem;
@@ -42,11 +42,10 @@
 		margin-block-start: 1.6rem;
 		font-size: var(--fz-400);
 		@include mxn.mq(medium) {
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			gap: 1rem;
 			margin-block-start: 4rem;
+			& > * {
+				display: inline-block;
+			}
 		}
 	}
 
@@ -58,5 +57,8 @@
 	&__role {
 		font-weight: var(--fw-500);
 		color: var(--clr-primary-300);
+		@include mxn.mq(medium) {
+			margin-inline-start: 1rem;
+		}
 	}
 }
